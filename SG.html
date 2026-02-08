@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine 💖</title>
+
+<style>
+body {
+  margin: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+    url("bg.png") center/cover no-repeat;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 420px;
+  animation: fadeIn 0.9s ease;
+}
+
+h1 {
+  font-size: 2.4em;
+  margin-bottom: 6px;
+  letter-spacing: 0.4px;
+}
+
+.name {
+  font-size: 1.3em;
+  opacity: 0.75;
+  margin-bottom: 25px;
+}
+
+p {
+  font-size: 1.35em;
+  margin-bottom: 35px;
+}
+
+button {
+  padding: 16px 34px;
+  font-size: 1.5em;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.35s ease;
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff2d55, #ff5c8a);
+  color: white;
+  box-shadow: 0 10px 30px rgba(255,45,85,0.45);
+}
+
+.no {
+  background: #2a2a2a;
+  color: #aaa;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+  <h1>Ghada</h1>
+  <div class="name">my bersing 💖</div>
+
+  <p id="questionText">Will you be my Valentine?</p>
+
+  <button class="yes" id="yesBtn" onclick="yes()">Yes</button>
+  <button class="no" id="noBtn" onclick="no()">No</button>
+</div>
+
+<script>
+let yesSize = 1.5;
+let noCount = 0;
+
+function yes() {
+  document.getElementById("main").innerHTML = `
+    <h1>🥰 Good choice</h1>
+    <div class="name">my bersing packme 💖</div>
+    <p>You just made me very happy</p>
+  `;
+}
+
+function no() {
+  noCount++;
+
+  const question = document.getElementById("questionText");
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+
+  if (noCount === 1) {
+    question.innerText = "Are you sure?";
+  } else if (noCount === 2) {
+    question.innerText = "Ya pickme bs!! 😌";
+  } else if (noCount === 3) {
+    question.innerText = "Try again 😌";
+  } else {
+    question.innerText = "That’s not the right answer 😏";
+  }
+
+  yesSize += 0.35;
+  yesBtn.style.fontSize = yesSize + "em";
+
+  noBtn.style.transform = `translateX(${Math.random()*40 - 20}px)`;
+}
+</script>
+
+</body>
+</html>
