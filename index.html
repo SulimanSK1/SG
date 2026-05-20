@@ -75,10 +75,10 @@ button {
 <body>
 
 <div class="container" id="main">
-  <h1>Ghada</h1>
+  <h1>SK , SG</h1>
   <div class="name">my bersing 💖</div>
 
-  <p id="questionText">Will you be my Valentine?</p>
+  <p id="questionText">THE END...</p>
 
   <button class="yes" id="yesBtn" onclick="yes()">Yes</button>
   <button class="no" id="noBtn" onclick="no()">No</button>
@@ -92,7 +92,7 @@ function yes() {
   document.getElementById("main").innerHTML = `
     <h1>🖤 I knew it 🖤 </h1>
     <div class="name">my bersing packme 💖</div>
-    <p>You my Valentnie  for life, not just for one day</p>
+    <p>I hope to see you living the life you always dreamed of, even if fate leads us down different paths. Not because this is the end of our story, but because some people leave a mark that time can never erase. </p>
   `;
 }
 
@@ -104,13 +104,13 @@ function no() {
   const noBtn = document.getElementById("noBtn");
 
   if (noCount === 1) {
-    question.innerText = "Are you sure?";
+    question.innerText = "Move On baby";
   } else if (noCount === 2) {
-    question.innerText = "Ya pickme bs!! 😌";
+    question.innerText = "404 Error";
   } else if (noCount === 3) {
-    question.innerText = "Try again 😌";
+    question.innerText = "See u ";
   } else {
-    question.innerText = "That’s not the right answer 😏";
+    question.innerText = "404 Error";
   }
 
   yesSize += 0.35;
